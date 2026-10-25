@@ -20,7 +20,8 @@ realtime adapter writes collection revisions and member grants through it.
 ## Origin
 
 Copied from `@segutrends/segufirebase` 0.0.2 (commit `255efc9`) on 2026-10-24
-(SEGU-240). The two packages are maintained separately from here on. Takebase
+(SEGU-240), first inside the Takebase monorepo and then in this repository
+(`takebase/firebase-rtdb`). The two packages are maintained separately from here on. Takebase
 added:
 
 - `getWithETag` and `setIfUnchanged` (conditional writes, `conflict` on a changed value);
@@ -122,9 +123,13 @@ const user = createClient({
 `AUTH_EMULATOR_URL` is exactly `http://127.0.0.1:9099` and is accepted only
 together with the database emulator.
 
-## Tests
+## Development
 
-- `pnpm --filter @takebase/firebase-rtdb test`: unit tests with a scripted `fetch`.
-- `pnpm test:firebase-rtdb` (from the repository root): the same client against
-  the real Auth and Database emulators (Java required; local only).
-- `examples/workers/tenant/test/firebase-rtdb.test.ts`: runs the client inside workerd.
+From the repository root (Node 24, pnpm 12):
+
+- `pnpm install`, then `pnpm lint`, `pnpm typecheck`, `pnpm test` and `pnpm build`.
+- `pnpm test`: unit tests with a scripted `fetch`; the emulator test is skipped.
+- `pnpm test:emulator`: the same client against the real Auth and Database
+  emulators (firebase-tools and Java required; local only, `demo-takebase`).
+- Takebase also runs the client inside workerd
+  (`examples/workers/tenant/test/firebase-rtdb.test.ts` in `takebase/takebase`).

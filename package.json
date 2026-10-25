@@ -8,11 +8,18 @@
 		".": "./src/index.ts"
 	},
 	"scripts": {
-		"build": "tsc -p tsconfig.build.json",
+		"lint": "biome check .",
+		"format": "biome check --write .",
 		"typecheck": "tsc --noEmit",
-		"test": "vitest run"
+		"test": "vitest run",
+		"test:emulator": "firebase emulators:exec --only auth,database --project demo-takebase 'vitest run test/emulator.test.ts'",
+		"build": "tsc -p tsconfig.build.json"
 	},
+	"packageManager": "pnpm@12.15.0",
 	"devDependencies": {
-		"@types/node": "^26.6.5"
+		"@biomejs/biome": "^2.6.2",
+		"@types/node": "^26.6.5",
+		"typescript": "^6.0.3",
+		"vitest": "^5.0.5"
 	}
 }

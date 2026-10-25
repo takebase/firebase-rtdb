@@ -1,0 +1,19 @@
+/AGENTS.md
+/.codegraph/
+
+# Firebase emulator logs, cache and exported state
+firebase-debug.log*
+database-debug.log*
+ui-debug.log*
+/.firebase/
+/emulator-data/
+
+# Local Wavelens review copies (published reviews live on the Multica issue)
+/reviews/
+
+# Build output
+dist/
+
+# Dependencies
+node_modules/
+.DS_Store
