@@ -29,7 +29,7 @@ added:
 - signing in as a real user through the Auth emulator (`authEmulatorURL`), so
   local tests run the database rules exactly as production does.
 
-It is private and unpublished until Takebase's license is chosen (SEGU-239).
+It is still private and unpublished.
 
 ## Usage
 
@@ -133,3 +133,9 @@ From the repository root (Node 24, pnpm 12):
   emulators (firebase-tools and Java required; local only, `demo-takebase`).
 - Takebase also runs the client inside workerd
   (`examples/workers/tenant/test/firebase-rtdb.test.ts` in `takebase/takebase`).
+
+## License
+
+MIT, copyright Segutrends. See [`LICENSE`](LICENSE). Contributions are accepted under the
+[Developer Certificate of Origin](https://developercertificate.org): sign off each commit with
+`git commit -s`. There is no CLA.
